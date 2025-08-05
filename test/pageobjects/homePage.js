@@ -30,31 +30,32 @@ class Homepage extends CommonClass {
      * @returns {Promise<void>}
      */
     async addRandomProductToWishlist() {
-        // Navigate to the shop page
+        
         await this.shopButton.click();
 
-        // Wait until at least the first product is displayed
+        
         const productList = await this.products;
         if (productList.length === 0) {
             throw new Error("No products Found");
         }
         await productList[0].waitForDisplayed({ timeout: 5000 });
 
-        // Pick a random product
+        
         const randomIndex = Math.floor(Math.random() * productList.length);
         const selectedProduct = productList[randomIndex];
 
-        // Ensure the selected product is visible
+        
         await expect(selectedProduct).toBeDisplayed();
 
-        // Find the 'Wish List' button within the selected product card
+        
         const wishListProduct = selectedProduct.$('//button[contains(text(), "Wish List")]');
+        await wishListProduct.scrollIntoView();
 
-        // Wait until it's displayed
+        
         await wishListProduct.waitForDisplayed({ timeout: 10000 });
 
 
-        // Click the 'Wish List' button
+        
         await wishListProduct.click();
     }
 }
