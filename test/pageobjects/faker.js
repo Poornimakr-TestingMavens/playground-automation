@@ -20,7 +20,7 @@ const address = {
 };
 
 /**
- * Export the necessary details inorder to use it during payment of an order
+ * Export the necessary details inorder to use it during the payment of an order
  */
 
 export const fakeUser = {
