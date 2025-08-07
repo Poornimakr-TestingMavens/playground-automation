@@ -1,4 +1,5 @@
-import { ReportAggregator, HtmlReporter } from "wdio-html-nice-reporter";
+// @ts-ignore
+import { JSONReporter, HTMLReportGenerator } from 'wdio-json-html-reporter';
 
 export const config = {
     runner: 'local',
@@ -26,21 +27,16 @@ export const config = {
     connectionRetryCount: 3,
 
     framework: 'jasmine',
+    
+
+
+    
 
     reporters: [
         'spec',
-        ['html-nice', {
-            outputDir: './reports/html-reports/',
-            filename: 'report.html',
-            reportTitle: 'Automation Report',
-            linkScreenshots: true,
-            showInBrowser: true,
-            collapseTests: true,
-            writeToFile: true,
-            useOnAfterCommandForScreenshot: true,
-            showInReport: true,  // this ensures step logs are visible
-            showConsoleLog: true // this shows console.log too
-
+        [JSONReporter, {
+            outputFile: './reports/test-results.json',
+            screenshotOption: 'OnFailure'  // or "No", "Full"
         }]
     ],
 
@@ -51,26 +47,13 @@ export const config = {
         }
     },
 
-    //
-    // Initialize the report aggregator variable in the config scope to access in hooks
-    reportAggregator: undefined,
+    // Hook: onComplete - generate final HTML from JSON
+    onComplete: async function () {
+        const outputFilePath = './reports/test-report.html';
+        const jsonFolder = './reports';
+        const historyFile = './reports/history.json'; // Optional
 
-    // Hook: onPrepare - runs before test starts
-    onPrepare: function (config, capabilities) {
-        this.reportAggregator = new ReportAggregator({
-            outputDir: './reports/html-reports/',
-            filename: 'final_report.html',
-            reportTitle: 'Final Consolidated Report',
-            browserName : capabilities[0].browserName,
-            collapseTests: true
-        });
-        // Clean previous reports if needed
-        this.reportAggregator.clean();
-    },
-
-    // Hook: onComplete - runs after all tests are done
-    onComplete: async function (exitCode, config, capabilities, results) {
-        await this.reportAggregator.createReport();
+        const reportGenerator = new HTMLReportGenerator(outputFilePath, historyFile);
+        await reportGenerator.convertJSONFolderToHTML(jsonFolder);
     }
-
 };
