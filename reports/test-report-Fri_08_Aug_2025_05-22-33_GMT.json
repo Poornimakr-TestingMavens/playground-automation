@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "executionId": "1754630527539",
+    "browserName": "MicrosoftEdge",
+    "executionStartTime": "Fri, 08 Aug 2025 05:22:07 GMT",
+    "executionEndTime": "Fri, 08 Aug 2025 05:22:33 GMT",
+    "totalTimeInMinutes": "0.43"
+  },
+  "testResults": [
+    {
+      "uid": "should login with valid credentialsspec0",
+      "timestamp": "05:22:24",
+      "suiteName": "My Login application",
+      "testName": "should login with valid credentials",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Homepage displays all categories to buyspec1",
+      "timestamp": "05:22:26",
+      "suiteName": "My Login application",
+      "testName": "Homepage displays all categories to buy",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Add a product to cartspec2",
+      "timestamp": "05:22:28",
+      "suiteName": "My Login application",
+      "testName": "Add a product to cart",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "go to buy now page of cartspec3",
+      "timestamp": "05:22:30",
+      "suiteName": "My Login application",
+      "testName": "go to buy now page of cart",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "working of reset cart buttonspec4",
+      "timestamp": "05:22:32",
+      "suiteName": "My Login application",
+      "testName": "working of reset cart button",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    }
+  ]
+}

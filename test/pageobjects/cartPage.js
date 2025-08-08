@@ -13,6 +13,18 @@ class CartPage extends CommonClass {
     get products() {
         return $$('//div[@class="w-full"]');
     }
+    get wishListButton(){
+        return $('//a[@href="/wishlist"]');
+    }
+    get wishListPageValidation(){
+        return $('//h1[text()="Wishlist"]');
+    }
+    get wishListResetButton(){
+        return $('//button[text()="Reset Wishlist"]');
+    }
+    get wishListResetSuccess(){
+        return $('//h1[text()="Your Wishlist feels lonely."]');
+    }
 
     /**
      * (Not used in current method) - Gets the 'Add to Cart' button.
@@ -61,6 +73,7 @@ class CartPage extends CommonClass {
 
         await wishListProduct.click();
     }
+    async 
 }
 
 export default new CartPage();

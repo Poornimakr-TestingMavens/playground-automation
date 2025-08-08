@@ -7,7 +7,7 @@ import checkOutPage from '../pageobjects/checkOutPage.js'
 import paymentPage from '../pageobjects/paymentPage.js'
 
 
-describe('My Login application', () => {
+describe('Playground Product Purchase', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open();
         await LoginPage.login(loginDetails.email, loginDetails.password);

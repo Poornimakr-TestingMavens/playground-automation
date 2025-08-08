@@ -7,7 +7,7 @@ import checkOutPage from '../pageobjects/checkOutPage.js'
 
 
 
-describe('My Login application', () => {
+describe('Playground Reset', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open();
         await LoginPage.login(loginDetails.email, loginDetails.password);
@@ -37,6 +37,15 @@ describe('My Login application', () => {
     it('working of reset cart button',async()=>{
         await checkOutPage.resetCartButtonvalidation.click();
         await expect(checkOutPage.resetSuccessMessage).toBeDisplayed();
+
+
+    })
+    it('working of reset wishlist button',async()=>{
+        await cartPage.wishListButton.click();
+        await expect(cartPage.wishListPageValidation).toBeDisplayed();
+        await cartPage.wishListResetButton.click();
+        await expect(cartPage.wishListResetSuccess).toBeDisplayed();
+
 
 
     })
