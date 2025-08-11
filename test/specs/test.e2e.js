@@ -11,44 +11,40 @@ describe('Playground Product Purchase', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open();
         await LoginPage.login(loginDetails.email, loginDetails.password);
-        await LoginPage.wishlistButton.waitForDisplayed({timeout:5000});
+        await LoginPage.wishlistButton().waitForDisplayed({timeout:10000,timeoutMsg:"Wishlist button is not displayed even after 10 seconds"});
         await LoginPage.homePage();
-        await expect(LoginPage.profileName).toBeDisplayed({timeout:5000});
+        await expect(LoginPage.profileName()).toBeDisplayed();
 
     })
     it('Homepage displays all categories to buy',async()=>{
-        await homePage.shopButton.click();
+        await homePage.shopButton().click();
+        await homePage.shopButton().waitForDisplayed({timeout:10000,timeoutMsg:"Shop button is not displayed even after 10 seconds"})
 
-        await expect(homePage.categoryButton).toBeDisplayed({timeout:5000});
-        await expect(homePage.brandButton).toBeDisplayed({timeout:5000});
-        await expect(homePage.shopByColor).toBeDisplayed();
+        await expect(homePage.categoryButton()).toBeDisplayed();
+        await expect(homePage.brandButton()).toBeDisplayed();
+        await expect(homePage.shopByColor()).toBeDisplayed();
     })
     it('add a product to wishlist',async () =>{
         await homePage.addRandomProductToWishlist();
-        await expect(homePage.wishListedMessage).toBeDisplayed();
+        await expect(homePage.wishListedMessage()).toBeDisplayed();
     })
     it('Add a product to cart',async()=>{
         await cartPage.addRandomProductToCart();
-        await expect(cartPage.cartPageMessage).toBeDisplayed();
+        await expect(cartPage.cartPageMessage()).toBeDisplayed();
     })
     it('go to buy now page of cart',async()=>{
         await checkOutPage.buyNowPage();
-        await expect(checkOutPage.cartPageValidation).toBeDisplayed();
+        await expect(checkOutPage.cartPageValidation()).toBeDisplayed();
         await checkOutPage.priceValidationOfCart();
-        await expect(checkOutPage.resetCartButtonvalidation).toBeDisplayed();
+        await expect(checkOutPage.resetCartButtonvalidation()).toBeDisplayed();
     })
-    // it('working of reset cart button',async()=>{
-    //     await checkOutPage.resetCartButtonvalidation.click();
-    //     await expect(checkOutPage.resetSuccessMessage).toBeDisplayed();
-
-
-    // })
+  
     it('successfully go to the payment page',async()=>{
-        await paymentPage.clickOnCheckoutButton.click();
-        await expect(paymentPage.paymentPageValidation).toBeDisplayed();
+        await paymentPage.clickCheckout();
+        await expect(paymentPage.paymentPageValidation()).toBeDisplayed();
         await paymentPage.fillPaymentDetails();
-        await paymentPage.placeOrderButton.click();
-        await expect(paymentPage.orderPlacedMessage).toBeDisplayed();
+        await paymentPage.placeOrder();
+        await expect(paymentPage.orderPlacedMessage()).toBeDisplayed();
 
 
     })

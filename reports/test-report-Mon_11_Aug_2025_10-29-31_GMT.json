@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "executionId": "1754908151729",
+    "browserName": "MicrosoftEdge",
+    "executionStartTime": "Mon, 11 Aug 2025 10:29:11 GMT",
+    "executionEndTime": "Mon, 11 Aug 2025 10:29:31 GMT",
+    "totalTimeInMinutes": "0.32"
+  },
+  "testResults": [
+    {
+      "uid": "should login with valid credentialsspec0",
+      "timestamp": "10:29:18",
+      "suiteName": "Playground Reset",
+      "testName": "should login with valid credentials",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Homepage displays all categories to buyspec1",
+      "timestamp": "10:29:19",
+      "suiteName": "Playground Reset",
+      "testName": "Homepage displays all categories to buy",
+      "status": "PASSED",
+      "errors": [],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "add a product to wishlistspec2",
+      "timestamp": "10:29:20",
+      "suiteName": "Playground Reset",
+      "testName": "add a product to wishlist",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: No products Found",
+          "stack": "at HomePage.addRandomProductToWishlist (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/homePage.js:21:19)\n    at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.reset.js:27:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-32c1d465-Mon_11_Aug_2025_10-29-20_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Add a product to cartspec3",
+      "timestamp": "10:29:20",
+      "suiteName": "Playground Reset",
+      "testName": "Add a product to cart",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: No products Found",
+          "stack": "at CartPage.addRandomProductToCart (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/cartPage.js:26:19)\n    at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.reset.js:31:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-122a9bd6-Mon_11_Aug_2025_10-29-20_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "working of reset cart buttonspec4",
+      "timestamp": "10:29:30",
+      "suiteName": "Playground Reset",
+      "testName": "working of reset cart button",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: Can't call click on element with selector \"//button[text()=\"Reset cart\"]\" because element wasn't found",
+          "stack": "at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.reset.js:36:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-48461d99-Mon_11_Aug_2025_10-29-30_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "working of reset wishlist buttonspec5",
+      "timestamp": "10:29:30",
+      "suiteName": "Playground Reset",
+      "testName": "working of reset wishlist button",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: received?.getElement is not a function",
+          "stack": "at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.reset.js:44:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-67dcce5e-Mon_11_Aug_2025_10-29-30_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    }
+  ]
+}

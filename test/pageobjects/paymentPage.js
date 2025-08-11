@@ -1,54 +1,43 @@
-import CommonClass from "./commonPage";
-import { fakeUser } from "./faker";
+import CommonClass from "./commonPage.js";
+import { fakeUser } from "./faker.js";
 
-/**
- * PaymentPage handles user interactions on the final checkout/payment page.
- */
+
 class PaymentPage extends CommonClass {
+    constructor() {
+        super();
 
-    /**
-     * Returns the "Proceed to Checkout" button element.
-     */
-    get clickOnCheckoutButton() {
-        return $('//button[text()="Proceed to Checkout"]');
-    }
-
-    /**
-     * Returns the header element to validate if the user is on the payment page.
-     */
-    get paymentPageValidation() {
-        return $('//h1[@class="text-5xl text-primeColor font-titleFont font-bold"]');
-    }
-
-    /**
-     * Returns the "Place Order" button element.
-     */
-    get placeOrderButton() {
-        return $('//button[@type="submit"]');
-    }
-
-    /**
-     * Returns the confirmation message element after an order is placed.
-     */
-    get orderPlacedMessage() {
-        return $('//span[@class="font-semibold text-lg"]');
+        /**
+         * Page-specific elements
+         */ 
+        this.clickOnCheckoutButton = () => $('//button[text()="Proceed to Checkout"]');
+        this.paymentPageValidation =() => $('//h1[@class="text-5xl text-primeColor font-titleFont font-bold"]');
+        this.placeOrderButton = () => $('//button[@type="submit"]');
+        this.orderPlacedMessage = ()=>$('//span[@class="font-semibold text-lg"]');
+        this.fullNameInput = () => $('//input[@name="fullName"]');
+        this.emailInput = () => $('//input[@name="email"]');
+        this.addressTextarea = () => $('//textarea[@name="address"]');
+        this.phoneInput = () => $('//input[@name="phone"]');
     }
 
     /**
      * Fills the payment form using fake user data.
-     * Uses name, email, full address (concatenated), and phone number from `faker.js`.
      */
     async fillPaymentDetails() {
-        await $('//input[@name="fullName"]').setValue(fakeUser.fullName);
-        await $('//input[@name="email"]').setValue(fakeUser.email);
-
-        
-        await $('//textarea[@name="address"]').setValue(
-            `${fakeUser.address.street}, ${fakeUser.address.city}, ${fakeUser.address.state}, ${fakeUser.address.zip}`
-        );
-
-        await $('//input[@name="phone"]').setValue(fakeUser.phone);
+         await this.fullNameInput().setValue(fakeUser.fullName);
+    await this.emailInput().setValue(fakeUser.email);
+    await this.addressTextarea().setValue(`${fakeUser.address.street}, ${fakeUser.address.city}, ${fakeUser.address.state}, ${fakeUser.address.zip}`
+    );
+    await this.phoneInput().setValue(fakeUser.phone);
+     
+      
     }
+    async clickCheckout() {
+    await this.clickOnCheckoutButton().click();
+    }
+    async placeOrder(){
+    await this.placeOrderButton().click();
+    }
+
 }
 
 export default new PaymentPage();

@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "executionId": "1754907250091",
+    "browserName": "MicrosoftEdge",
+    "executionStartTime": "Mon, 11 Aug 2025 10:14:10 GMT",
+    "executionEndTime": "Mon, 11 Aug 2025 10:17:15 GMT",
+    "totalTimeInMinutes": "3.09"
+  },
+  "testResults": [
+    {
+      "uid": "should login with valid credentialsspec0",
+      "timestamp": "10:14:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "should login with valid credentials",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "invalid session id: WebDriverError: invalid session id when running \"element\" with method \"POST\" and args \"{\"using\":\"xpath\",\"value\":\"//div[@class=\\\"max-w-container mx-auto\\\"]/descendant::div[6]\"}\"",
+          "stack": "error properties: Object({ url: http://localhost:53303/session/acf59337d159b77555340965d2e0e1a9/element, opts: Object({ method: 'POST', redirect: 'follow', signal: [object AbortSignal], body: Object({ using: 'xpath', value: '//div[@class=\"max-w-container mx-auto\"]/descendant::div[6]' }), headers: [object Headers], dispatcher: Agent({ _events: null({  }), _eventsCount: 0, _maxListeners: undefined, Symbol(shapeMode): false, Symbol(kCapture): false, Symbol(nodejs.stream.destroyed): false, Symbol(onDestroyed): null, Symbol(closed): false, Symbol(onClosed): [  ], Symbol(dispatch interceptors): [ Function ], Symbol(options): Object({ connectTimeout: 120000, headersTimeout: 120000, bodyTimeout: 120000, connect: undefined, interceptors: undefined }), Symbol(maxRedirections): 0, Symbol(factory): Function 'defaultFactory', Symbol(clients): Map( [ 'http://localhost:53303', Pool({ _events: null({ connectionError: [ Function, Function ], drain: Function, connect: Function, disconnect: Function }), _eventsCount: 4,  ...\ninvalid session id: WebDriverError: invalid session id when running \"element\" with method \"POST\" and args \"{\"using\":\"xpath\",\"value\":\"//div[@class=\\\"max-w-container mx-auto\\\"]/descendant::div[6]\"}\"\n    at async LoginPage.login (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/login.page.js:23:9)\n    at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:13:9)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Homepage displays all categories to buyspec1",
+      "timestamp": "10:14:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "Homepage displays all categories to buy",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: homePage.shopButton.click is not a function",
+          "stack": "at UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:20:35)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "add a product to wishlistspec2",
+      "timestamp": "10:15:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "add a product to wishlist",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: Timeout",
+          "stack": "at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Add a product to cartspec3",
+      "timestamp": "10:16:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "Add a product to cart",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: Timeout",
+          "stack": "at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "go to buy now page of cartspec4",
+      "timestamp": "10:17:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "go to buy now page of cart",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: Timeout",
+          "stack": "at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "successfully go to the payment pagespec5",
+      "timestamp": "10:17:15",
+      "suiteName": "Playground Product Purchase",
+      "testName": "successfully go to the payment page",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: this.clickOnCheckoutButton.click is not a function",
+          "stack": "at PaymentPage.clickCheckout (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/paymentPage.js:33:38)\n    at UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:42:27)"
+        }
+      ],
+      "screenshot": "",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    }
+  ]
+}

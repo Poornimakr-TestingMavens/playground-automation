@@ -1,68 +1,37 @@
-import { $ } from '@wdio/globals'
-import CommonClass from './commonPage';
 
+import CommonClass from './commonPage.js';
 
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends CommonClass {
-    
-    
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () {
-        return $('//input[@id="email"]');
-    }
+    constructor() {
+        super();
 
-    get inputPassword () {
-        return $('//input[@id="password"]');
-    }
-
-    get btnSubmit () {
-        return $('//button[@type="submit"]');
-    }
-    get loginButton(){
-        return $('//div[@class="max-w-container mx-auto"]/descendant::div[6]')
-    }
-    get signinButton(){
-        return $('//a[@href="/signin"]');
-    }
-    get wishlistButton(){
-        return $('//a[@href="/wishlist"]');
-    }
-    get profileButton(){
-        return $('//p[text()="Profile"]');
-    }
-    get profileName(){
-        return $('//p[@class="mb-4"][2]');
+        /**
+         * Page-specific elements
+         */ 
+        this.inputUsername = ()=>$('//input[@id="email"]');
+        this.inputPassword = ()=>$('//input[@id="password"]');
+        this.btnSubmit = ()=>$('//button[@type="submit"]');
+        this.loginButton =()=> $('//div[@class="max-w-container mx-auto"]/descendant::div[6]');
+        this.signinButton = ()=>$('//a[@href="/signin"]');
+        this.wishlistButton = ()=>$('//a[@href="/wishlist"]');
+        this.profileButton = ()=>$('//p[text()="Profile"]');
+        this.profileName = ()=>$('//p[@class="mb-4"][2]');
     }
 
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * Logs in with given email and password
      */
-    async login(email,password){
-        await this.loginButton.click();
-        await this.signinButton.click();
-
-
-        await this.inputUsername.setValue(email);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-        
-        
-        
-        
-
-    }
-    async homePage(){
-        await this.profileButton.click();
+    async login(email, password) {
+        await this.loginButton().click();
+        await this.signinButton().click();
+        await this.inputUsername().setValue(email);
+        await this.inputPassword().setValue(password);
+        await this.btnSubmit().click();
     }
 
-    
-    
+    async homePage() {
+        await this.profileButton().click();
+    }
 }
 
 export default new LoginPage();

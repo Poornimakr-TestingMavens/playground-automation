@@ -1,63 +1,60 @@
-import CommonClass from "./commonPage";
+import CommonClass from "./commonPage.js";
 
-/**
- * Homepage class handles interactions on the homepage like accessing products
- * and adding a random product to the wishlist.
- */
-class Homepage extends CommonClass {
+class HomePage extends CommonClass {
+    constructor() {
+        super();
 
-    /**
-     * Returns all product card elements displayed on the shop page.
-     * @returns {Promise<WebdriverIO.ElementArray>}
-     */
-    get products() {
-        return $$('//div[@class="w-full"]');
-    }
-
-
-    /**
-     * Gets the toast message element displayed after adding a product to the wishlist.
-     * @returns {Promise<WebdriverIO.Element>}
-     */
-    get wishListedMessage() {
-        return $('//div[@class="Toastify__toast-icon Toastify--animate-icon Toastify__zoom-enter"]');
+        /**
+         * Page-specific elements
+         */ 
+         
+        this.products = () => $$('//div[@class="w-full"]');
+        this.wishListedMessage = () => $('//div[contains(@class,"Toastify__toast-icon")]');
     }
 
     /**
      * Clicks the 'Shop' button, waits for products to load, and adds a random product to the wishlist.
-     * Throws an error if no products are found.
-     * Waits for the selected product to be displayed before clicking the wishlist button inside it.
-     * @returns {Promise<void>}
      */
     async addRandomProductToWishlist() {
-        
-        await this.shopButton.click();
+        await this.shopButton().click();
 
         
-        const productList = await this.products;
+        await browser.waitUntil(async () => {
+            const products = await this.products();
+            return products.length > 0;
+        }, {
+            timeout: 10000,
+            timeoutMsg: 'Products did not load in time'
+        });
+
+        const productList = await this.products();  
+
         if (productList.length === 0) {
             throw new Error("No products Found");
         }
-        await productList[0].waitForDisplayed({ timeout: 5000 });
 
-        
+        /**
+         * Pick random product
+         */ 
         const randomIndex = Math.floor(Math.random() * productList.length);
         const selectedProduct = productList[randomIndex];
 
-        
-        await expect(selectedProduct).toBeDisplayed();
+        await selectedProduct.waitForDisplayed({timeout:8000,timeoutMsg:"Selected product is not displayed even after 8 seconds"});
 
-        
-        const wishListProduct = selectedProduct.$('//button[contains(text(), "Wish List")]');
+        /**
+         * Find the wishlist button inside the product
+         */ 
+        const wishListProduct = await selectedProduct.$('.//button[contains(text(), "Wish List")]');
+        await wishListProduct.waitForExist({ timeout: 10000, timeoutMsg: 'Wish List button did not exist in time' });
+
+        await wishListProduct.waitForDisplayed({ 
+            timeout: 10000, 
+            timeoutMsg: 'Wish List button was not displayed within 10 seconds inside the selected product' 
+        });
         await wishListProduct.scrollIntoView();
-
-        
-        await wishListProduct.waitForDisplayed({ timeout: 10000 });
-
-
-        
+      
         await wishListProduct.click();
     }
 }
 
-export default new Homepage();
+export default new HomePage();

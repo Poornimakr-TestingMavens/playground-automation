@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "executionId": "1754908008262",
+    "browserName": "MicrosoftEdge",
+    "executionStartTime": "Mon, 11 Aug 2025 10:26:48 GMT",
+    "executionEndTime": "Mon, 11 Aug 2025 10:26:58 GMT",
+    "totalTimeInMinutes": "0.16"
+  },
+  "testResults": [
+    {
+      "uid": "should login with valid credentialsspec0",
+      "timestamp": "10:26:56",
+      "suiteName": "Playground Product Purchase",
+      "testName": "should login with valid credentials",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: element (\"//a[@href=\"/wishlist\"]\") still not displayed after 5000ms",
+          "stack": "at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:14:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-3b5b61e2-Mon_11_Aug_2025_10-26-56_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Homepage displays all categories to buyspec1",
+      "timestamp": "10:26:56",
+      "suiteName": "Playground Product Purchase",
+      "testName": "Homepage displays all categories to buy",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: homePage.shopButton.click is not a function",
+          "stack": "at UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:20:35)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-5f94d089-Mon_11_Aug_2025_10-26-56_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "add a product to wishlistspec2",
+      "timestamp": "10:26:57",
+      "suiteName": "Playground Product Purchase",
+      "testName": "add a product to wishlist",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: No products Found",
+          "stack": "at HomePage.addRandomProductToWishlist (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/homePage.js:21:19)\n    at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:27:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-32c1d465-Mon_11_Aug_2025_10-26-57_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "Add a product to cartspec3",
+      "timestamp": "10:26:57",
+      "suiteName": "Playground Product Purchase",
+      "testName": "Add a product to cart",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "Error: No products Found",
+          "stack": "at CartPage.addRandomProductToCart (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/cartPage.js:26:19)\n    at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:31:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-122a9bd6-Mon_11_Aug_2025_10-26-57_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "go to buy now page of cartspec4",
+      "timestamp": "10:26:57",
+      "suiteName": "Playground Product Purchase",
+      "testName": "go to buy now page of cart",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: received?.getElement is not a function",
+          "stack": "at async UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:36:9)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-63a68817-Mon_11_Aug_2025_10-26-57_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    },
+    {
+      "uid": "successfully go to the payment pagespec5",
+      "timestamp": "10:26:57",
+      "suiteName": "Playground Product Purchase",
+      "testName": "successfully go to the payment page",
+      "status": "FAILED",
+      "errors": [
+        {
+          "message": "TypeError: this.clickOnCheckoutButton.click is not a function",
+          "stack": "at PaymentPage.clickCheckout (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/pageobjects/paymentPage.js:33:38)\n    at UserContext.<anonymous> (file:///C:/Users/PoornimaKR/OneDrive%20-%20Testing%20Mavens%20LLC/Playground%20Automation/test/specs/test.e2e.js:42:27)"
+        }
+      ],
+      "screenshot": "reports\\screenshots\\screenshot-37aab21e-Mon_11_Aug_2025_10-26-57_GMT.png",
+      "browserConsoleLogs": [],
+      "specConsoleLogs": []
+    }
+  ]
+}
