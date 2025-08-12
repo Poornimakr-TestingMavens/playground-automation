@@ -11,16 +11,16 @@ describe('Playground Reset', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open();
         await LoginPage.login(loginDetails.email, loginDetails.password);
-        await LoginPage.wishlistButton().waitForDisplayed({timeout:5000});
+        await LoginPage.wishlistButton().waitForDisplayed({timeout:5000,timeoutMsg:"Wishlist button is not displayed even after 5 seconds."});
         await LoginPage.homePage();
-        await expect(LoginPage.profileName()).toBeDisplayed({timeout:5000});
+        await expect(LoginPage.profileName()).toBeDisplayed();
 
     })
     it('Homepage displays all categories to buy',async()=>{
         await homePage.shopButton().click();
 
-        await expect(homePage.categoryButton()).toBeDisplayed({timeout:5000});
-        await expect(homePage.brandButton()).toBeDisplayed({timeout:5000});
+        await expect(homePage.categoryButton()).toBeDisplayed();
+        await expect(homePage.brandButton()).toBeDisplayed();
         await expect(homePage.shopByColor()).toBeDisplayed();
     })
     it('add a product to wishlist',async () =>{

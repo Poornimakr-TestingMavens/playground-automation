@@ -11,14 +11,14 @@ describe('Playground Product Purchase', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open();
         await LoginPage.login(loginDetails.email, loginDetails.password);
-        await LoginPage.wishlistButton().waitForDisplayed({timeout:10000,timeoutMsg:"Wishlist button is not displayed even after 10 seconds"});
+        await LoginPage.wishlistButton().waitForDisplayed({timeout:10000,timeoutMsg:"Wishlist button did not exist in time."});
         await LoginPage.homePage();
         await expect(LoginPage.profileName()).toBeDisplayed();
 
     })
     it('Homepage displays all categories to buy',async()=>{
         await homePage.shopButton().click();
-        await homePage.shopButton().waitForDisplayed({timeout:10000,timeoutMsg:"Shop button is not displayed even after 10 seconds"})
+        await homePage.shopButton().waitForDisplayed({timeout:10000,timeoutMsg:"Shop button is not displayed even after 10 seconds."})
 
         await expect(homePage.categoryButton()).toBeDisplayed();
         await expect(homePage.brandButton()).toBeDisplayed();
